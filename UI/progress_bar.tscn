@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dug37jm6e2f8u"]
+
+[ext_resource type="Script" uid="uid://d2wndt88183mq" path="res://UI/progress_bar.gd" id="1_ng8tm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_copv3"]
+bg_color = Color(0.8156863, 0.5921569, 0.22745098, 0.21568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng8tm"]
+bg_color = Color(0.8025771, 0.53443235, 0.21151412, 1)
+
+[node name="ProgressBar" type="ProgressBar" unique_id=1540919480]
+custom_minimum_size = Vector2(400, 50)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -65.0
+offset_right = 100.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_copv3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ng8tm")
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("1_ng8tm")
