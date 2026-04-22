@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ctodq51e7j1mv"]
+
+[ext_resource type="Texture2D" uid="uid://ddnku1wlyu20n" path="res://addons/kenney_prototype_textures/light/texture_06.png" id="1_fe0su"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl84o"]
+albedo_texture = ExtResource("1_fe0su")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iudcu"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ij5ti"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[node name="world" type="Node3D" unique_id=1250802805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1510807219]
+material_override = SubResource("StandardMaterial3D_gl84o")
+mesh = SubResource("PlaneMesh_iudcu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1859215862]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=787602054]
+shape = SubResource("ConcavePolygonShape3D_ij5ti")

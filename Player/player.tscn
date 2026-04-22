@@ -140,6 +140,9 @@ properties/4/replication_mode = 1
 properties/5/path = NodePath(".:on_floor")
 properties/5/spawn = true
 properties/5/replication_mode = 1
+properties/6/path = NodePath("PlayerName:text")
+properties/6/spawn = true
+properties/6/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" unique_id=1005038837]
 collision_layer = 2
@@ -150,26 +153,26 @@ unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="godot_plush_model/Rig" parent_id_path=PackedInt32Array(2002612313, 1602614698) index="0" unique_id=1214705613]
-bones/0/position = Vector3(0, 0.7877076, 0)
-bones/0/rotation = Quaternion(0.00080753874, -0.07968422, -0.010114231, 0.9967686)
-bones/1/rotation = Quaternion(-0.011012919, 0.039135408, 0.94000185, -0.33873862)
-bones/2/rotation = Quaternion(0.16132309, -0.010579121, 0.001745049, 0.9868434)
-bones/4/rotation = Quaternion(-0.06382033, -0.10630522, 0.93396926, 0.33515325)
-bones/5/rotation = Quaternion(0.23826818, -0.010417348, 0.0025400096, 0.97114027)
-bones/7/position = Vector3(0, 0.7877076, 0)
-bones/7/rotation = Quaternion(0.9967686, -0.010114231, 0.07968422, -0.00080752204)
-bones/8/rotation = Quaternion(0.03814093, -0.0026260028, -0.03711802, 0.9985793)
-bones/9/position = Vector3(-1.927316e-08, 0.15290752, 5.831454e-09)
-bones/9/rotation = Quaternion(0.14843567, -0.20513776, 0.03147319, 0.9668996)
-bones/10/position = Vector3(-2.632854e-09, 0.20675512, 5.778075e-10)
-bones/10/rotation = Quaternion(-0.55252165, -0.09452755, 0.018268008, 0.8279194)
+bones/0/position = Vector3(0, 0.7861578, 0)
+bones/0/rotation = Quaternion(0.00022665678, 0.023344308, 0.0096224435, 0.9996812)
+bones/1/rotation = Quaternion(-0.020050809, 0.056626517, 0.938871, -0.33898765)
+bones/2/rotation = Quaternion(0.3004309, -0.012700218, 0.0040036067, 0.9537106)
+bones/4/rotation = Quaternion(-0.07273159, -0.12369874, 0.93139154, 0.33454233)
+bones/5/rotation = Quaternion(0.0973019, -0.013253862, 0.0012931098, 0.9951659)
+bones/7/position = Vector3(0, 0.7861578, 0)
+bones/7/rotation = Quaternion(0.9996812, 0.009622445, -0.023344308, -0.00022661313)
+bones/8/rotation = Quaternion(-0.022632174, -0.0019584647, -0.02714378, 0.9993734)
+bones/9/position = Vector3(-2.5380206e-08, 0.1536129, -3.008033e-09)
+bones/9/rotation = Quaternion(0.16218461, -0.20820346, 0.035004843, 0.96390986)
+bones/10/position = Vector3(1.7740003e-08, 0.20747359, 3.6476338e-09)
+bones/10/rotation = Quaternion(-0.5199175, 0.012825252, 0.028961238, 0.8536291)
 bones/11/position = Vector3(-1.8974232e-08, 0.25121188, -1.34572575e-08)
 bones/11/rotation = Quaternion(-0.00010266324, 0.93244886, -0.36130205, 4.6266316e-05)
-bones/12/rotation = Quaternion(-0.055541947, 0.0021233207, 0.033784755, 0.99788237)
-bones/13/position = Vector3(-7.31621e-10, 0.15242416, 2.9405376e-09)
-bones/13/rotation = Quaternion(0.16648297, 0.20844214, -0.036043078, 0.9630868)
-bones/14/position = Vector3(-1.552166e-08, 0.20601253, -1.776649e-08)
-bones/14/rotation = Quaternion(-0.49481285, -0.06834178, -0.039888687, 0.8653893)
+bones/12/rotation = Quaternion(-0.023457019, 0.00414161, 0.063905805, 0.99767166)
+bones/13/position = Vector3(-2.6751557e-08, 0.15286326, 1.6825403e-09)
+bones/13/rotation = Quaternion(0.21019131, 0.19958456, -0.043889835, 0.9560645)
+bones/14/position = Vector3(-9.007612e-09, 0.20667706, -6.2354903e-09)
+bones/14/rotation = Quaternion(-0.5535642, 0.038405612, -0.03186677, 0.83131)
 bones/15/position = Vector3(-4.381811e-08, 0.25120696, -3.54451e-08)
 bones/15/rotation = Quaternion(-2.7811215e-05, 0.9324604, -0.36127213, 0.00027790133)
 
@@ -207,5 +210,13 @@ wait_time = 0.1
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=107012441]
 replication_config = SubResource("SceneReplicationConfig_btcbx")
+
+[node name="PlayerName" type="Label3D" parent="." unique_id=287291000]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+text = "Debug"
+font_size = 50
+outline_size = 20
 
 [editable path="godot_plush_model"]

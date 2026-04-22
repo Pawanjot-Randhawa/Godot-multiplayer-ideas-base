@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://3ey03hsao2e4"]
+
+[ext_resource type="Texture2D" uid="uid://bbjuk10eagouy" path="res://addons/kenney_prototype_textures/dark/texture_04.png" id="1_1rsiv"]
+[ext_resource type="PackedScene" uid="uid://c40v2tuy6p761" path="res://Areas/Core/game_switch_area.tscn" id="2_nstbv"]
+[ext_resource type="PackedScene" uid="uid://ctodq51e7j1mv" path="res://Areas/Manhunt/world.tscn" id="3_m5lg2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28aoi"]
+albedo_texture = ExtResource("1_1rsiv")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vvh5c"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pyidc"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+
+[node name="main_hub" type="Node3D" unique_id=650218485]
+
+[node name="Base" type="Node3D" parent="." unique_id=1644465472]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Base" unique_id=1620961679]
+material_override = SubResource("StandardMaterial3D_28aoi")
+mesh = SubResource("PlaneMesh_vvh5c")
+
+[node name="Node3D" type="StaticBody3D" parent="Base" unique_id=774214405]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/Node3D" unique_id=1660643835]
+shape = SubResource("ConcavePolygonShape3D_pyidc")
+
+[node name="Area3D" parent="." unique_id=1747316812 instance=ExtResource("2_nstbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+area_to_switch_to = ExtResource("3_m5lg2")

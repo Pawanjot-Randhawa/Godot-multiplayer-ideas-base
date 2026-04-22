@@ -78,7 +78,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("sprint") and stamina > 25:
 		move_speed = sprint_speed
 		run = true
-		drain_stamina(2,true)
+		drain_stamina(1,true)
 	elif event.is_action_released("sprint"):
 		move_speed = walk_speed
 		run = false
@@ -196,7 +196,8 @@ func spawn_stamina_bar():
 		canvas.add_child(bar)
 	else:
 		print("Error: Could not find CanvasLayer!")
-
+func set_playernametag(value: String):
+	%PlayerName.text = value
 ##Helper function to call one shot animations on all machines
 @rpc("call_local", "reliable", "authority")
 func one_shot_animation(location: String):

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c40v2tuy6p761"]
 
 [ext_resource type="Texture2D" uid="uid://4yija38t8y4q" path="res://addons/kenney_prototype_textures/purple/texture_05.png" id="1_7p6bm"]
-[ext_resource type="Script" uid="uid://c6apbtt1hxh0a" path="res://Gamemodes/Core/game_switch_area.gd" id="1_mg1vr"]
+[ext_resource type="Script" uid="uid://c6apbtt1hxh0a" path="res://Areas/Core/game_switch_area.gd" id="1_mg1vr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_iariq"]
 height = 4.0
