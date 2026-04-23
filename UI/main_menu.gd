@@ -14,6 +14,8 @@ var peer: MultiplayerPeer
 #const PLAYER = preload("uid://cdne2banlrbwx")
 @export var PLAYER: PackedScene
 
+@export var playersContainer: Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if NET_MODE == "Local":
@@ -106,7 +108,7 @@ func add_player(peer_id):
 	%Players.add_child(p)
 
 func remove_player(peer_id):
-	var p = get_node_or_null(str(peer_id))
+	var p = playersContainer.get_node_or_null(str(peer_id))
 	if p:
 		p.queue_free()
 		if multiplayer.is_server():
