@@ -60,6 +60,7 @@ func _ready() -> void:
 	stamina_regen_timer.timeout.connect(func(): stamina+= 2)
 	stamina_regen(true)
 	spawn_stamina_bar()
+	set_playernametag(SteamManager.STEAM_USERNAME)
 	camera.current = true
 
 func _input(event: InputEvent) -> void:
@@ -71,7 +72,6 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event.is_action_pressed("emote"):
 		lock()
-		print("auth is " + str(get_multiplayer_authority()) + "machine is " + str(multiplayer.get_unique_id()))
 		one_shot_animation.rpc("parameters/Emote/request")
 		await animation_tree.animation_finished
 		unlock()

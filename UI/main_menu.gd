@@ -103,7 +103,7 @@ func join_lobby(_lobby_id : int = 0):
 func add_player(peer_id):
 	var p : Player = PLAYER.instantiate()
 	p.name = str(peer_id)
-	var authority = "SERVER" if multiplayer.is_server() else "CLIENT"
+	var authority = "SERVER" if multiplayer.is_server() else "Player"
 	p.set_playernametag(authority)
 	#p.set_multiplayer_authority(peer_id) not sure if better to do here or in player
 	%Players.add_child(p)

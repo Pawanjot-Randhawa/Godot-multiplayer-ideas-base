@@ -34,9 +34,6 @@ func add_player(peer_id: int):
 		player.position = Vector3(randi_range(-2, 2), 1, randi_range(-2, 2))
 		#Add this plaer to list with key = peerid and value = player node
 		players_list[peer_id] = player
-		#For debugging set the nametag equal to if the player is server or client
-		var is_server = "SERVER" if peer_id == 1 else "CLIENT"
-		player.set_playernametag(is_server)
 		#Add to the player copntainer
 		players_container_node.add_child(player)
 	else:#Else should not trigger ideally

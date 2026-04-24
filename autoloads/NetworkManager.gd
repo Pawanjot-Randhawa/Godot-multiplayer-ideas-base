@@ -20,6 +20,7 @@ func _ready() -> void:
 
 ##Universal for Enet and Steam, basic function to host a game, connect this to a host game button
 func host_game():
+	SteamManager.STEAM_USERNAME = "SERVER" # THis is just for debugging
 	if connection == AvailableNetworks.ENET:
 		peer.create_server(1027)
 		multiplayer.multiplayer_peer = peer #this is set automatically via signals in steam version
@@ -30,6 +31,7 @@ func host_game():
 	
 ##Universal for Enet and Steam, basic function to join a game, connect this to a join game button
 func join_game():
+	SteamManager.STEAM_USERNAME = "CLIENT" # THis is just for debugging
 	if connection == AvailableNetworks.ENET:
 		peer.create_client("127.0.0.1", 1027)
 		multiplayer.multiplayer_peer = peer #this is set automatically via signals in steam version
