@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxj3u2tpdwxve" path="res://root.gd" id="1_l8v81"]
 [ext_resource type="PackedScene" uid="uid://3ey03hsao2e4" path="res://Areas/Hub/main_hub.tscn" id="2_28aoi"]
 [ext_resource type="PackedScene" uid="uid://cvfx5ewamu3c2" path="res://Player/player.tscn" id="2_pyidc"]
+[ext_resource type="PackedScene" uid="uid://dfr001ixx08i1" path="res://Multiplayer/multiplayer_manager.tscn" id="3_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://31btugq4fxnl" path="res://UI/main_menu.tscn" id="5_jnlp7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vvh5c"]
@@ -21,6 +22,7 @@ glow_enabled = true
 [node name="Root" type="Node" unique_id=1291369236]
 script = ExtResource("1_l8v81")
 inital_area = ExtResource("2_28aoi")
+MULTIPLAYERMANAGER = ExtResource("3_jnlp7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=492892801]
 environment = SubResource("Environment_jnlp7")
@@ -45,5 +47,6 @@ spawn_path = NodePath("../Players")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1818814315]
 
-[node name="MainMenu" parent="CanvasLayer" unique_id=629735843 instance=ExtResource("5_jnlp7")]
+[node name="MainMenu" parent="CanvasLayer" unique_id=629735843 node_paths=PackedStringArray("playersContainer") instance=ExtResource("5_jnlp7")]
 PLAYER = ExtResource("2_pyidc")
+playersContainer = NodePath("../../Players")

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SteamManager="*uid://3iiplfnggrlc"
 Signalbus="*uid://djngt12mkm8h3"
+NetworkManager="*uid://blnt7won1gubp"
 
 [display]
 

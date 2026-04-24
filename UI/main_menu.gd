@@ -18,11 +18,11 @@ var peer: MultiplayerPeer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if NET_MODE == "Local":
-		peer = ENetMultiplayerPeer.new()
-		SteamManager.STEAM_USERNAME = str(multiplayer.get_unique_id())
-	else:
-		peer = SteamMultiplayerPeer.new()
+	#if NET_MODE == "Local":
+		#peer = ENetMultiplayerPeer.new()
+		#SteamManager.STEAM_USERNAME = str(multiplayer.get_unique_id())
+	#else:
+		#peer = SteamMultiplayerPeer.new()
 	
 	Steam.lobby_created.connect(on_lobby_created)
 	Steam.lobby_joined.connect(on_lobby_joined)
@@ -60,9 +60,10 @@ func _on_join_button_pressed() -> void:
 	lobby_list_container.show()
 	if NET_MODE == "Local":
 		hide()
-		peer.create_client("127.0.0.1", 1027)
-		multiplayer.multiplayer_peer = peer #this is set automatically via singsla in steam version
-		print("worked")
+		NetworkManager.join_game()
+		#peer.create_client("127.0.0.1", 1027)
+		#multiplayer.multiplayer_peer = peer #this is set automatically via singsla in steam version
+		#print("worked")
 		return
 	#Clear any chuildren if there are any
 	var lobby_btns = lobbies.get_children()
@@ -116,15 +117,16 @@ func remove_player(peer_id):
 #Triggered when pressing host from Main Menu
 func _on_host_button_pressed() -> void:
 	hide()
-	if NET_MODE == "Local":
-		peer.create_server(1027)
-		multiplayer.multiplayer_peer = peer #this is set automatically via singsla in steam version
-	elif NET_MODE == "Steam":
-		Steam.createLobby(Steam.LOBBY_TYPE_PUBLIC)
-	multiplayer.peer_connected.connect(add_player) #when a player connects add them
-	multiplayer.peer_disconnected.connect(remove_player) #when a player leaves remove them
-	
-	add_player(multiplayer.get_unique_id()) # add host
+	NetworkManager.host_game()
+	#if NET_MODE == "Local":
+		#peer.create_server(1027)
+		#multiplayer.multiplayer_peer = peer #this is set automatically via singsla in steam version
+	#elif NET_MODE == "Steam":
+		#Steam.createLobby(Steam.LOBBY_TYPE_PUBLIC)
+	#multiplayer.peer_connected.connect(add_player) #when a player connects add them
+	#multiplayer.peer_disconnected.connect(remove_player) #when a player leaves remove them
+	#
+	#add_player(multiplayer.get_unique_id()) # add host
 
 #Filters lobby names, triggers on text switch
 func _on_filter_name_text_changed(new_text: String) -> void:
