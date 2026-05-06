@@ -16,7 +16,7 @@ top_radius = 3.0
 bottom_radius = 3.0
 height = 0.1
 
-[node name="Area3D" type="Area3D" unique_id=1747316812]
+[node name="AreaSwitcher" type="Area3D" unique_id=1747316812]
 collision_mask = 3
 script = ExtResource("1_mg1vr")
 
