@@ -29,7 +29,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 material_override = SubResource("StandardMaterial3D_rss5i")
 mesh = SubResource("CylinderMesh_0sn4v")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1112388499]
+[node name="NAME" type="Label3D" parent="." unique_id=1112388499]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 billboard = 1
 text = "Debug"

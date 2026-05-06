@@ -1,5 +1,12 @@
+@tool #allows the name change to be reflected in editor
 extends Area3D
 
+@export var NAME: String:
+	set(value):
+		NAME = value
+		if NAME.is_empty():
+			NAME = "Debug"
+		%NAME.text = value
 
 @export_file(".tscn") var target_area : String
 #Export file must be used as this scene can cause circular depencys where A loads B, and B loads A

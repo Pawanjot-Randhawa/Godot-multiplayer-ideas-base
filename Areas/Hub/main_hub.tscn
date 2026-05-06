@@ -28,4 +28,5 @@ shape = SubResource("ConcavePolygonShape3D_pyidc")
 
 [node name="AreaSwitcher" parent="." unique_id=1747316812 instance=ExtResource("2_nstbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
+NAME = "MANHUNT"
 target_area = "uid://ctodq51e7j1mv"
