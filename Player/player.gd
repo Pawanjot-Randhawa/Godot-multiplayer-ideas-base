@@ -206,3 +206,8 @@ func one_shot_animation(location: String):
 @rpc("call_local", "reliable", "authority")
 func move_animation_state(location: String, new_state):
 	animation_tree.get(location).travel(new_state)
+
+##Teleport the player to a Vector3 position
+@rpc("call_local", "any_peer")
+func teleport_to_position(pos:Vector3):
+	position = pos

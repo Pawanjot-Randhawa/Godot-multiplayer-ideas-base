@@ -30,3 +30,6 @@ shape = SubResource("ConcavePolygonShape3D_pyidc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
 NAME = "MANHUNT"
 target_area = "uid://ctodq51e7j1mv"
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1887865841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

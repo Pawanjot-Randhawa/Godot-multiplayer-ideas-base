@@ -28,3 +28,6 @@ shape = SubResource("ConcavePolygonShape3D_ij5ti")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11)
 NAME = "Main Hub"
 target_area = "uid://3ey03hsao2e4"
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1854629481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
